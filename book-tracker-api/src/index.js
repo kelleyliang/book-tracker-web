@@ -19,5 +19,10 @@ app.get("/", (req, res) => {
   res.send("API is running");
 });
 
+// Routes
+const bookRoutes = require('./routes/books');
+app.use('/api/books', bookRoutes);
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
